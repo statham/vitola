@@ -8,22 +8,22 @@ const login = (email, password) => (dispatch) => {
     type: LOGIN_REQUEST
   });
   return api.login(email, password)
-    .then(resp => resp.json())
-      .then(data => accessToken.saveSessionToken(data)
-        .then(() => {
-          dispatch({
-            type: LOGIN_SUCCESS,
-            data
-          });
-          Actions.Tabbar();
-        })
-      )
-      .catch((error) => {
-        dispatch({
-          type: LOGIN_FAILURE,
-          data: error
-        });
+  .then(resp => resp.json())
+  .then(data => accessToken.saveSessionToken(data)
+    .then(() => {
+      dispatch({
+        type: LOGIN_SUCCESS,
+        data
       });
+      Actions.Tabbar();
+    })
+  )
+  .catch((error) => {
+    dispatch({
+      type: LOGIN_FAILURE,
+      data: error
+    });
+  });
 };
 
 export default login;

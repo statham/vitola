@@ -4,7 +4,7 @@ export const register = (email, password) => (
   fetch(routes.registerUrl, {
     method: "POST",
     headers: {
-      "Accept": "application/json",
+      Accept: "application/json",
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
@@ -18,7 +18,7 @@ export const login = (email, password) => (
   fetch(routes.loginUrl, {
     method: "POST",
     headers: {
-      "Accept": "application/json",
+      Accept: "application/json",
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
